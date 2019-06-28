@@ -1,3 +1,4 @@
+// productos/js/validaciones.js
 $(document).ready(function(){
   // productos/productos.jsp --> Registrar producto
   $('#btnRegistrarProducto').on('click', function(e){
@@ -86,7 +87,7 @@ $(document).ready(function(){
     e.preventDefault();
   })
 
-  //
+  // productos/productos.jsp --> Solicitar productos (Modal)
   $('#btnSolicitarProducto').on('click', function(e){
     if( $('#sopr_cantidadSolicitar').val() === ''){
       $('#sopr_cantidadSolicitar').focus();
@@ -102,7 +103,7 @@ $(document).ready(function(){
     e.preventDefault();
   });
 
-  //
+  // productos/productos.jsp --> registrar categoria (Modal)
   $('#btnAgregarCategoria').on('click', function(e){
     if( $('#nombreCategoria').val() === ''){
       $('#nombreCategoria').focus();

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="../css/materialize.min.css">
-  <link rel="stylesheet" href="http://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="../css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="css/producto.estilos.css">
   <title>MAGNO - Productos</title>
 </head>
 <body>
@@ -37,7 +37,7 @@
     </nav>
   </div>
   
-  <div id="test1" class="col s12">
+  <div id="test1" class="col s12 active">
     <!-- CONTENEDOR TAB 01 -->
     <div class="container" style="width: 90%;">
         <div class="row"></div><div class="row"></div>
@@ -73,7 +73,7 @@
                   <td>
                     <a class="btn-floating grey lighten-5 tooltipped modal-trigger" data-position="top" data-tooltip="Administrar" href="#modalAdministrarProducto"><i class="material-icons left deep-purple-text">ballot</i></a>
                     <a class="btn-floating grey lighten-5 tooltipped modal-trigger" data-position="top" data-tooltip="Solicitar" href="#modalSolicitarProducto"><i class="material-icons left deep-purple-text">assignment</i></a>
-                    <a class="btn-floating grey lighten-5 tooltipped" data-position="top" data-tooltip="Eliminar"><i class="material-icons left orange-text">delete_forever</i></a>
+                    <a class="btn-floating grey lighten-5 tooltipped" data-position="top" data-tooltip="Eliminar" id="eliminarProducto"><i class="material-icons left orange-text">delete_forever</i></a>
                   </td>
                 </tr>
                 <tr>
@@ -184,7 +184,7 @@
             <label>Proveedor</label>
           </div>
           <div class="col s12 m12">
-            <button class="btn btn-large waves-effect waves-light deep-purple darken-2" type="submit" id="btnRegistrarProducto" name="btnRegistrarProducto">Guardar
+            <button class="btn btn-large waves-effect waves-light deep-purple darken-2" type="submit" id="btnRegistrarProducto" name="btnRegistrarProducto">Registrar
               <i class="material-icons right">done_all</i>
             </button>
           </div>
@@ -294,15 +294,15 @@
             <input placeholder="Nombre" id="sopr_nombre" name="sopr_nombre" type="text" readonly>
             <label for="sopr_nombre">Nombre</label>
           </div>
-          <div class="input-field col s12 m3">
+          <div class="input-field col s12 m4">
             <input placeholder="Marca" id="sopr_marca" name="sopr_marca" type="text" readonly>
             <label for="sopr_marca">Marca</label>
           </div>
-          <div class="input-field col s12 m2">
+          <div class="input-field col s12 m4">
             <input placeholder="Cantidad" id="sopr_cantidadExistencia" name="sopr_cantidadExistencia" type="number" readonly>
             <label for="sopr_cantidadExistencia">Cantidad en existencia</label>
           </div>
-          <div class="input-field col s12 m2">
+          <div class="input-field col s12 m4">
             <input placeholder="Cantidad" id="sopr_cantidadSolicitar" name="sopr_cantidadSolicitar" type="number">
             <label for="sopr_cantidadSolicitar">Cantidad a solicitar</label>
           </div>
@@ -316,7 +316,7 @@
             <label>Proveedor</label>
           </div>
           <div class="col s12 m12">
-            <button class="btn btn-large waves-effect waves-light deep-purple darken-2" type="submit" id="btnSolicitarProducto" name="btnSolicitarProducto">Actualizar
+            <button class="btn btn-large waves-effect waves-light deep-purple darken-2" type="submit" id="btnSolicitarProducto" name="btnSolicitarProducto">Solicitar
               <i class="material-icons right">done_all</i>
             </button>
           </div>
@@ -383,11 +383,7 @@
           <div class="collapsible-header"><i class="material-icons">category</i>Categorias</div>
           <div class="collapsible-body">
             <ul style="margin-left: 35px;">
-              <li><a class="waves-effect waves-light"><i class="material-icons left">directions_bike</i>Deporte</a></li>
-              <li><a class="waves-effect waves-light"><i class="material-icons left">store</i>Hogar</a></li>
-              <li><a class="waves-effect waves-light"><i class="material-icons left">spa</i>Moda</a></li>
-              <li><a class="waves-effect waves-light"><i class="material-icons left">favorite</i>Salud</a></li>
-              <li><a class="waves-effect waves-light"><i class="material-icons left">devices_other</i>Tecnología</a></li>
+              <li><a class="waves-effect waves-light">Administrar</a></li>
             </ul>
           </div>
         </li>
@@ -449,18 +445,10 @@
   <!--<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>-->
   <script src="../js/jquery-3.4.1.min.js"></script>
   <script src="../js/materialize.min.js"></script> 
-  <script src="http://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script> 
+  <script src="../js/jquery.dataTables.min.js"></script> 
+  <script src="../js/sweetalert2.all.min.js"></script>
   <script src="../js/inicializaciones.js"></script>
-  <script src="../js/validaciones.js"></script>
-  <script>
-    $(document).ready(function(){
-      $('#miTabla').DataTable({
-        "language": {
-            "decimal": ",",
-            "thousands": "."
-        }
-      });
-    });
-  </script>
+  <script src="js/validaciones.js"></script>
+  <script src="js/productos.js"></script>
 </body>
 </html>
