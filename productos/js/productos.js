@@ -1,5 +1,6 @@
+comunicacion = null
 $(document).ready(function(){
-
+  comunicacion = window.location.origin;
   $('#miTabla').DataTable({
     "language": {
         "decimal": ",",
@@ -50,5 +51,11 @@ $(document).ready(function(){
       $('#valorVenta').val(calculoValorVenta)
     }
   })
+
+  $('#admonCategorias').on('click', function(){
+    ruta = comunicacion+'/categorias/categorias.html';
+    $(this).attr('href', ruta)
+  });
+
 
 });

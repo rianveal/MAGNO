@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="../css/materialize.min.css">
   <link rel="stylesheet" href="../css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="../css/fuente/font.css">
+  <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="css/producto.estilos.css">
   <title>MAGNO - Productos</title>
 </head>
@@ -21,7 +23,7 @@
   <div class="navbar-fixed">
     <nav class="nav-extended">
       <div class="nav-wrapper deep-purple darken-1">
-        <a href="#!" class="brand-logo" style="margin-left: 10px;">MAGNO</a>
+        <a href="#!" class="brand-logo logo-texto" style="margin-left: 10px;">MAGNO</a>
         <ul class="right hide-on-med-and-down">
           <li><a href="#" data-target="slide-out" class="sidenav-trigger" style="display: block;"><i class="material-icons">menu</i></a></li>
           <!-- Dropdown Trigger -->
@@ -30,14 +32,14 @@
       </div>
       <div class="nav-content deep-purple">
           <ul class="tabs tabs-transparent">
-            <li class="tab"><a class="active" href="#test1">Productos</a></li>
-            <li class="tab"><a href="#test2">Estadisticas</a></li>
+            <li class="tab"><a class="active" href="#tabProductos">Productos</a></li>
+            <li class="tab"><a href="#tabInformesProductos">Informes</a></li>
           </ul>
         </div>
     </nav>
   </div>
   
-  <div id="test1" class="col s12 active">
+  <div id="tabProductos" class="col s12 active">
     <!-- CONTENEDOR TAB 01 -->
     <div class="container" style="width: 90%;">
         <div class="row"></div><div class="row"></div>
@@ -47,11 +49,11 @@
             <h4>Administración de productos</h4>
           </div>
           <div class="col s12 m12">
-            <table class="striped responsive-table" id="miTabla">
+            <table class="striped" id="miTabla">
               <thead>
                 <tr>
                     <th>Codigo</th>
-                    <th>Nombre</th>
+                    <th>Producto</th>
                     <th>Marca</th>
                     <th>Valor</th>
                     <th>Categoria</th>
@@ -63,7 +65,7 @@
 
               <tbody>
                 <tr>
-                  <td>P0001</td>
+                  <td class="center-align">P0001</td>
                   <td>Producto 01</td>
                   <td>Marca 01</td>
                   <td>$20.000</td>
@@ -71,9 +73,9 @@
                   <td class="center-align">20</td>
                   <td class="center-align red-text"><b>20</b></td>
                   <td>
-                    <a class="btn-floating grey lighten-5 tooltipped modal-trigger" data-position="top" data-tooltip="Administrar" href="#modalAdministrarProducto"><i class="material-icons left deep-purple-text">ballot</i></a>
-                    <a class="btn-floating grey lighten-5 tooltipped modal-trigger" data-position="top" data-tooltip="Solicitar" href="#modalSolicitarProducto"><i class="material-icons left deep-purple-text">assignment</i></a>
-                    <a class="btn-floating grey lighten-5 tooltipped" data-position="top" data-tooltip="Eliminar" id="eliminarProducto"><i class="material-icons left orange-text">delete_forever</i></a>
+                    <a class="btn transparent btn-flat lighten-5 tooltipped modal-trigger" data-position="top" data-tooltip="Administrar" href="#modalAdministrarProducto"><i class="material-icons deep-purple-text">ballot</i></a>
+                    <a class="btn transparent btn-flat lighten-5 tooltipped modal-trigger" data-position="top" data-tooltip="Solicitar" href="#modalSolicitarProducto"><i class="material-icons deep-purple-text">assignment</i></a>
+                    <a class="btn transparent btn-flat lighten-5 tooltipped" data-position="top" data-tooltip="Eliminar" id="eliminarProducto"><i class="material-icons orange-text">delete_forever</i></a>
                   </td>
                 </tr>
                 <tr>
@@ -85,9 +87,9 @@
                   <td class="center-align">70</td>
                   <td class="center-align">20</td>
                   <td>
-                    <a class="btn-floating grey lighten-5 tooltipped" data-position="top" data-tooltip="Administrar"><i class="material-icons left deep-purple-text">ballot</i></a>
-                    <a class="btn-floating grey lighten-5 tooltipped" data-position="top" data-tooltip="Solicitar"><i class="material-icons left deep-purple-text">assignment</i></a>
-                    <a class="btn-floating grey lighten-5 tooltipped" data-position="top" data-tooltip="Eliminar"><i class="material-icons left orange-text">delete_forever</i></a>
+                    <a class="btn transparent btn-flat lighten-5 tooltipped" data-position="top" data-tooltip="Administrar"><i class="material-icons deep-purple-text">ballot</i></a>
+                    <a class="btn transparent btn-flat lighten-5 tooltipped" data-position="top" data-tooltip="Solicitar"><i class="material-icons deep-purple-text">assignment</i></a>
+                    <a class="btn transparent btn-flat lighten-5 tooltipped" data-position="top" data-tooltip="Eliminar"><i class="material-icons orange-text">delete_forever</i></a>
                   </td>
                 </tr>
                 <tr>
@@ -99,9 +101,9 @@
                   <td class="center-align">1000</td>
                   <td class="center-align">50</td>
                   <td>
-                    <a class="btn-floating grey lighten-5 tooltipped" data-position="top" data-tooltip="Administrar"><i class="material-icons left deep-purple-text">ballot</i></a>
-                    <a class="btn-floating grey lighten-5 tooltipped" data-position="top" data-tooltip="Solicitar"><i class="material-icons left deep-purple-text">assignment</i></a>
-                    <a class="btn-floating grey lighten-5 tooltipped" data-position="top" data-tooltip="Eliminar"><i class="material-icons left orange-text">delete_forever</i></a>
+                    <a class="btn transparent btn-flat lighten-5 tooltipped" data-position="top" data-tooltip="Administrar"><i class="material-icons deep-purple-text">ballot</i></a>
+                    <a class="btn transparent btn-flat lighten-5 tooltipped" data-position="top" data-tooltip="Solicitar"><i class="material-icons deep-purple-text">assignment</i></a>
+                    <a class="btn transparent btn-flat lighten-5 tooltipped" data-position="top" data-tooltip="Eliminar"><i class="material-icons orange-text">delete_forever</i></a>
                   </td>
                 </tr>
               </tbody>
@@ -110,15 +112,15 @@
         </div>
     </div>
   </div>
-  <div id="test2" class="col s12">
+  <div id="tabInformesProductos" class="col s12">
     <div class="container" style="width: 90%;">
         <div class="row"></div><div class="row"></div><div class="row"></div>
-      <h4>Graficos y demas</h4>
+      <h4>Gráficos, informes y demás</h4>
     </div>
   </div>
 
   <!-- Modal REGISTRAR producto -->
-  <div id="modalRegistrarProducto" class="modal">
+  <div id="modalRegistrarProducto" class="modal modal-fixed-footer">
     <div class="modal-content">
       <h4>Agregar producto</h4>
       <p>Opción mediante la cual puede crear productos nuevos.</p>
@@ -183,21 +185,18 @@
             </select>
             <label>Proveedor</label>
           </div>
-          <div class="col s12 m12">
-            <button class="btn btn-large waves-effect waves-light deep-purple darken-2" type="submit" id="btnRegistrarProducto" name="btnRegistrarProducto">Registrar
-              <i class="material-icons right">done_all</i>
-            </button>
-          </div>
+          
         </div>
       </form>
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Salir</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="btnRegistrarProducto" name="btnRegistrarProducto">Registrar</a>
     </div>
   </div>
 
   <!-- Modal ADMINISTRAR producto, adpr : administrar producto -->
-  <div id="modalAdministrarProducto" class="modal">
+  <div id="modalAdministrarProducto" class="modal modal-fixed-footer">
     <div class="modal-content">
       <h4>Administrar producto</h4>
       <p>Opción mediante la cual puede administrar un producto especifico.</p>
@@ -266,21 +265,17 @@
             </select>
             <label>Proveedor</label>
           </div>
-          <div class="col s12 m12">
-            <button class="btn btn-large waves-effect waves-light deep-purple darken-2" type="submit" id="btnActualizarProducto" name="btnActualizarProducto">Actualizar
-              <i class="material-icons right">done_all</i>
-            </button>
-          </div>
         </div>
       </form>
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Salir</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Actualizar</a>
     </div>
   </div>  
 
   <!-- Modal SOLICITAR producto, sopr : solicitar producto -->
-  <div id="modalSolicitarProducto" class="modal">
+  <div id="modalSolicitarProducto" class="modal modal-fixed-footer">
     <div class="modal-content">
       <h4>Solicitar producto</h4>
       <p>Opción mediante la cual puede solicitar un producto especifico.</p>
@@ -315,16 +310,12 @@
             </select>
             <label>Proveedor</label>
           </div>
-          <div class="col s12 m12">
-            <button class="btn btn-large waves-effect waves-light deep-purple darken-2" type="submit" id="btnSolicitarProducto" name="btnSolicitarProducto">Solicitar
-              <i class="material-icons right">done_all</i>
-            </button>
-          </div>
         </div>
       </form>
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Salir</a>
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="btnSolicitarProducto">Solicitar</a>
     </div>
   </div>  
 
@@ -364,7 +355,7 @@
       </div>
       <a href="#user"><img class="circle" src="../img/foto-perfil-femenina.png"></a>
       <a href="#name"><span class="white-text name">Maria Perez</span></a>
-      <a href="#email"><span class="white-text email">maria.perez@xyz.com</span></a>
+      <a href="#email"><span class="white-text email">Administrador(a)</span></a>
     </div></li>
     <li>
       <ul class="collapsible">
@@ -375,7 +366,7 @@
               <li><a class="waves-effect waves-light">Administrar</a></li>
               <li><a class="waves-effect waves-light">Top 100</a></li>
               <li><a class="waves-effect waves-light">Ofertas</a></li>
-              <li><a class="waves-effect waves-light">Datos estadisticos</a></li>
+              <li><a class="waves-effect waves-light">Informes</a></li>
             </ul>
           </div>
         </li>
@@ -383,7 +374,7 @@
           <div class="collapsible-header"><i class="material-icons">category</i>Categorias</div>
           <div class="collapsible-body">
             <ul style="margin-left: 35px;">
-              <li><a class="waves-effect waves-light">Administrar</a></li>
+              <li><a class="waves-effect waves-light" id="admonCategorias">Administrar</a></li>
             </ul>
           </div>
         </li>
@@ -449,6 +440,7 @@
   <script src="../js/sweetalert2.all.min.js"></script>
   <script src="../js/inicializaciones.js"></script>
   <script src="js/validaciones.js"></script>
+  <script src="../js/app.js"></script>
   <script src="js/productos.js"></script>
 </body>
 </html>

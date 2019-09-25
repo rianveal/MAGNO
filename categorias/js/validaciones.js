@@ -1,4 +1,3 @@
-// categoria/js/validaciones.js
 $(document).ready(function(){
   // Registrar categoria
   $('#btnAgregarCategoria').on('click', function(e){
@@ -8,7 +7,7 @@ $(document).ready(function(){
       return false;
     }else if( $('#descripcionCategoria').val() === null ){
       $('#descripcionCategoria').focus();
-      M.toast({html: 'ampo DESCRIPCION DE CATEGORIA no puede ser vacio.', classes: 'rounded'});
+      M.toast({html: 'Campo DESCRIPCION DE CATEGORIA no puede ser vacio.', classes: 'rounded'});
       return false;
     }else{
       return true;
