@@ -114,11 +114,11 @@ function habilitarFormularioLogin(){
 }
 
 function direccionarPrincipal(){
-  ruta = comunicacion+'/tablero.html';
+  ruta = comunicacion+'/MAGNO/tablero.html';
   window.location.href = ruta;
 };
 
 function direccionarPrincipalCliente(){
-  ruta = comunicacion+'/index.html';
+  ruta = comunicacion+'/MAGNO/index.html';
   window.location.href = ruta;
 };
