@@ -53,7 +53,7 @@ $(document).ready(function(){
   })
 
   $('#admonCategorias').on('click', function(){
-    ruta = comunicacion+'/categorias/categorias.html';
+    ruta = comunicacion+'/MAGNO/categorias/categorias.html';
     $(this).attr('href', ruta)
   });
 
