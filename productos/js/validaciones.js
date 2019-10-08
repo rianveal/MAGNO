@@ -1,6 +1,49 @@
-// productos/js/validaciones.js
 $(document).ready(function(){
-  // productos/productos.jsp --> Registrar producto
+  
+  $('#eliminarProducto').on('click', function(){
+    Swal.fire({
+      title: 'Seguro(a)?',
+      text: "No podra revertir esta decisión!",
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Si, Eliminar!'
+    }).then((result) => {
+      if (result.value) {
+        Swal.fire(
+          'Eliminado!',
+          'El registro ha sido borrado.',
+          'success'
+        )
+      }
+    })
+  });
+
+  $('#valorCompra').on('keyup', function(){
+    var iva = $('#iva').val();
+    var valorCompra = $(this).val()
+    if( iva === '' ){
+      $('#valorVenta').val(valorCompra)
+    }else{
+      calculoValorVenta = parseFloat(valorCompra) + (parseFloat(valorCompra) * (parseFloat(iva)/100));
+      $('#valorVenta').val(calculoValorVenta)
+    }
+  })
+
+  $('#iva').on('keyup', function(){
+    var valorCompra = $('#valorCompra').val();
+    var iva = $(this).val(); 
+    if( valorCompra === '' ){
+      M.toast({html: 'Campo VALOR COMPRA no puede ser vacio.', classes: 'rounded'});
+      $(this).val('');
+    }else{
+      calculoValorVenta = parseFloat(valorCompra) + (parseFloat(valorCompra) * (parseFloat(iva)/100))
+      $('#valorVenta').val(calculoValorVenta)
+    }
+  })
+
   $('#btnRegistrarProducto').on('click', function(e){
     if( $('#codigo').val() === ''){
       $('#codigo').focus();
@@ -39,10 +82,17 @@ $(document).ready(function(){
       M.toast({html: 'Es necesiario seleccionar un PROVEEDOR.', classes: 'rounded'});
       return false;
     }else{
+      limpiarFormularioProducto();
       return true;
     }
     e.preventDefault();
+  
   });
+
+  $('#btnSalirModalProducto').on('click', function(){
+    limpiarFormularioProducto();
+  });
+
   // productos/productos.jsp --> Administrar productos (Modal)
   $('#btnActualizarProducto').on('click', function(e){
     if( $('#adpr_codigo').val() === ''){
@@ -87,7 +137,7 @@ $(document).ready(function(){
     e.preventDefault();
   })
 
-  // productos/productos.jsp --> Solicitar productos (Modal)
+  // Solicitar productos (Modal)
   $('#btnSolicitarProducto').on('click', function(e){
     if( $('#sopr_cantidadSolicitar').val() === ''){
       $('#sopr_cantidadSolicitar').focus();
@@ -103,20 +153,47 @@ $(document).ready(function(){
     e.preventDefault();
   });
 
-  // productos/productos.jsp --> registrar categoria (Modal)
-  $('#btnAgregarCategoria').on('click', function(e){
+  // Registrar categoria (Modal)
+  $('#btnCrearCategoria').on('click', function(e){
     if( $('#nombreCategoria').val() === ''){
       $('#nombreCategoria').focus();
-      M.toast({html: 'Campo NOMBRE CATEGORIA no puede ser vacio.', classes: 'rounded'});
+      M.toast({html: 'Campo NOMBRE CATEGORÍA no puede ser vacio.', classes: 'rounded'});
       return false;
-    }else if( $('#descripcionCategoria').val() === null ){
+    }else if( $('#descripcionCategoria').val() === '' ){
       $('#descripcionCategoria').focus();
-      M.toast({html: 'ampo DESCRIPCION DE CATEGORIA no puede ser vacio.', classes: 'rounded'});
+      M.toast({html: 'Campo DESCRIPCIÓN DE CATEGORÍA no puede ser vacio.', classes: 'rounded'});
       return false;
     }else{
+      limpiarFormularioCategoria();
       return true;
     }
     e.preventDefault();
   })
 
+  $('#btnSalirModalCategoria').on('click', function(){
+    limpiarFormularioCategoria();
+  })
+
+  $('#admonCategorias').on('click', function(){
+    //ruta = comunicacion+'/MAGNO/categorias/categorias.html';
+    ruta = comunicacion+'/categorias/categorias.html';
+    $(this).attr('href', ruta)
+  });
+
 });
+
+function limpiarFormularioProducto(){
+  $('#codigo').val('');
+  $('#nombre').val('');
+  $('#marca').val('');
+  $('#valorCompra').val('');
+  $('#iva').val('');
+  $('#valorVenta').val('');
+  $('#topeMinimo').val('');
+  $('#topeMaximo').val('');
+}
+
+function limpiarFormularioCategoria(){
+  $('#nombreCategoria').val('');
+  $('#descripcionCategoria').val('');
+}

@@ -17,9 +17,9 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
   position: relative;
   width: 100%;
   height: 100vh;
-  /*background-image: linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('../img/495.jpg');
+  background-image: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('../img/workspace.jpg');
   background-position: center;
-  background-size: cover; */
+  background-size: cover; 
   /*background-image: linear-gradient(to right, red , yellow);*/
 }
 
@@ -34,7 +34,7 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
 .contenedor-login--principal{
   position: absolute;
   width: 80%;
-  max-width: 450px;
+  max-width: 400px;
   top: 50%;
   left: 50%;
   padding: 15px 10px;
@@ -104,6 +104,7 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
   /*background-color: #f3f0f0;*/
 }
 
+/* BOTÓN MENU - MOBILE */
 .boton-menu {
   position: fixed;
   left: 5%;
@@ -113,6 +114,33 @@ input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-
   width: 40px;
   text-align: center;
   line-height: 52px;
+}
+
+/* TABLE STYLE GENERAL */
+table.dataTable tbody td{
+  padding: 8px 0;
+}
+/* Título show entries */
+.dataTables_length{
+  display: none;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current{
+  border: none;
+  background: #673ab7;
+  color: #fff !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover{
+    color: #673ab7 !important;
+    background: rgb(196, 206, 247);
+    box-shadow: none;
+    border: 1px solid transparent;
+}
+
+table.dataTable tbody td{
+  padding: 10.5px 5px;
 }
 
 @media (min-width: 600px){}

@@ -4,12 +4,12 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /*background-image: url('../../img/2648320.jpg');
+  background-image: url('../../img/2741840.jpg');
   background-position: center;
-  background-size: cover;*/
+  background-size: cover;
   width: 80%;
-  max-width: 500px;
-  height: 80vh;
+  max-width: 600px;
+  height: 200px;
   max-height: 500px;
 }
 
@@ -21,4 +21,17 @@
   text-align: center;
   width: 80%;
   height: auto;
+}
+
+@media (min-width: 768px){
+  .contenedor-imagen{
+    height: 300px;
+  }
+}
+
+@media (min-width: 992px){
+  .contenedor-imagen{
+    height: 50vh;
+    max-height: 80vh;
+  }
 }

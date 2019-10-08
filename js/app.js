@@ -78,6 +78,7 @@ $(document).ready(function(){
   /** MODAL **/ 
   $('.btnModal').on('click', function(){
     var modal = $(this).attr('href');
+    console.log(modal)
     $(''+modal).fadeIn();
   });
 
@@ -112,13 +113,3 @@ function habilitarFormularioLogin(){
   $('#btnIniciarSesion').removeClass('disabled');
   $('#btnAgregarme').removeClass('disabled');
 }
-
-function direccionarPrincipal(){
-  ruta = comunicacion+'/MAGNO/tablero.html';
-  window.location.href = ruta;
-};
-
-function direccionarPrincipalCliente(){
-  ruta = comunicacion+'/MAGNO/index.html';
-  window.location.href = ruta;
-};

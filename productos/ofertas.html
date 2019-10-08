@@ -7,15 +7,15 @@
   <link rel="stylesheet" href="../css/fuente/font.css">
   <link rel="stylesheet" href="../css/material-icons.css">
   <link rel="stylesheet" href="../css/materialize.min.css">
-  <link rel="stylesheet" href="../css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="../css/jquery.dataTables.min.css"> 
   <link rel="stylesheet" href="../css/style.css">
-  <title>MAGNO - Cateorías</title>
+  
+  <title>MAGNO | Ofertas</title>
 </head>
 <body>
   <!-- Dropdown Structure -->
   <ul id="dropdown1" class="dropdown-content">
-      <li><a href="#!">Opcion</a></li>
-      <li><a href="#!">Opcion</a></li>
+      <li><a href="#!">Configuración</a></li>
       <li class="divider"></li>
       <li><a href="#!">Salir</a></li>
   </ul>
@@ -30,94 +30,81 @@
           <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Maria Perez<i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
       </div>
+      
     </nav>
   </div>
   
   <div class="container" style="width: 90%;">
-    <div class="row"></div><div class="row"></div>
+    <div class="row"></div>
     <div class="row">
       <div class="col s12 m12">
-        <h5>Categorías</h5>
-        <span>> Administración</span>
+        <h5>Administración de ofertas</h5>
       </div>
-      <div class="col s12 m6">
-        <table class="striped responsive-table centered" id="tablaCategorias">
+      <div class="col s12 m12">
+        <table class="responsive-table centered" id="tablaOfertas">
           <thead>
             <tr>
-                <th>Codigo</th>
-                <th>Nombre</th>
-                <th>Descripcion</th>
+                <th>Código producto</th>
+                <th>Producto</th>
+                <th>Tope mínimo</th>
+                <th>En existencia</th>
+                <th>% Oferta</th>
+                <th>Valor especifico</th>
+                <th>Valor venta</th>
                 <th></th>
             </tr>
           </thead>
 
           <tbody>
             <tr>
-              <td>C001</td>
-              <td>Categoría 01</td>
-              <td>Categoría 01</td>
+              <td>P001</td>
+              <td>Producto 01</td>
+              <td>15</td>
+              <td>18</td>
+              <td>50%</td>
+              <td>50.000</td>
+              <td>50.000</td>
               <td>
-                <a class="btn transparent btn-flat lighten-5 tooltipped" data-position="top" data-tooltip="Actualizar" id="actualizarCategoria"><i class="material-icons left deep-purple-text">update</i></a>
-                <a class="btn transparent btn-flat lighten-5 tooltipped" data-position="top" data-tooltip="Eliminar" id="eliminarProducto"><i class="material-icons left orange-text">delete_forever</i></a>
-              </td>
-            </tr>
-            <tr>
-              <td>C002</td>
-              <td>Categoría 02</td>
-              <td>Categoría 02</td>
-              <td>
-                <a class="btn transparent btn-flat lighten-5 tooltipped" data-position="top" data-tooltip="Actualizar" id="actualizarCategoria"><i class="material-icons left deep-purple-text">update</i></a>
-                <a class="btn transparent btn-flat lighten-5 tooltipped" data-position="top" data-tooltip="Eliminar" id="eliminarProducto"><i class="material-icons left orange-text">delete_forever</i></a>
-              </td>
-            </tr>
-            <tr>
-              <td>C003</td>
-              <td>Categoría 03</td>
-              <td>Categoría 03</td>
-              <td>
-                <a class="btn transparent btn-flat lighten-5 tooltipped" data-position="top" data-tooltip="Actualizar" id="actualizarCategoria"><i class="material-icons left deep-purple-text">update</i></a>
-                <a class="btn transparent btn-flat lighten-5 tooltipped" data-position="top" data-tooltip="Eliminar" id="eliminarProducto"><i class="material-icons left orange-text">delete_forever</i></a>
+                <a class="transparent lighten-5 tooltipped btnModal" data-position="top" data-tooltip="Administrar" id="Administrar" href="#modalAdministrarXXXX"><i class="material-icons deep-purple-text">settings</i></a>
+                <a class="transparent lighten-5 tooltipped" data-position="top" data-tooltip="Eliminar" id="eliminar"><i class="material-icons orange-text">delete_forever</i></a>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
-      <div class="col s12 m5 offset-m1">
-        <div class="row">
-          <form action="">
-            <div class="col s12 m12">
-              <h5>Datos de la categoría</h5>
-            </div>
-            <div class="input-field col s12 m4">
-              <input placeholder="Código" id="ac_codigo" name="ac_codigo" type="text" readonly>
-              <label for="codigo">Código</label>
-            </div>
-            <div class="input-field col s12 m8">
-              <input placeholder="Nombre" id="ac_nombre" name="ac_nombre" type="text" class="validate">
-              <label for="nombre">Nombre</label>
-            </div>
-            <div class="input-field col s12 m12">
-              <input placeholder="Descripción" id="ac_descripcion" name="ac_descripcion" type="text" class="validate">
-              <label for="descripcion">Descripción</label>
-            </div>
-            <div class="col s12 m12">
-              <button class="btn waves-effect waves-light deep-purple darken-2 disabled" type="submit" id="btnActualizarCategoria" name="btnActualizarCategoria">Actualizar
-                <i class="material-icons right">update</i>
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
     </div>
   </div>
+
+  <div class="contenedor-modal" id="modalRegistrarOferta">
+      <div class="contenedor-modal--principal">
+        <div class="contenedor-modal--cuerpo">
+          <div class="row">
+            <div class="row">
+              <h4>Oferta</h4>
+              <span>Generar oferta</span>
+            </div>
+            <div class="row">
+              <div class="input-field col s12 m4">
+                <input placeholder="Placeholder" id="codigoProductoValida" name="codigoProductoValida" type="text" autocomplete="off">
+                <label for="codigoProductoValida">Código del producto</label>
+              </div>
+              <a class="waves-effect waves-light btn deep-purple accent-3" id="btnValidarExistenciaPersona" style="margin-top: 24px;"><i class="material-icons">search</i></a>
+            </div>
+          </div>
+        </div>
+        <div class="contenedor-modal--piecero">
+          <a class="btn-flat cerrar-modal" id="salirRegistrarOferta">Salir</a>
+          <a class="btn-flat" id="btnRegistrarOferta">Registrar</a>
+      </div>
+      </div>
+    </div>
   
-  <!-- SIDENAV -->
   <ul id="slide-out" class="sidenav">
     <li><div class="user-view">
       <div class="background">
-        <img src="../../img/magno-fondo-01.jpg">
+        <img src="../img/magno-fondo-01.jpg">
       </div>
-      <a href="#user"><img class="circle" src="../../img/foto-perfil-femenina.png"></a>
+      <a href="#user"><img class="circle" src="../img/foto-perfil-femenina.png"></a>
       <a href="#name"><span class="white-text name">Maria Perez</span></a>
       <a href="#email"><span class="white-text email">Administrador(a)</span></a>
     </div></li>
@@ -183,38 +170,23 @@
     <li><a class="waves-effect waves-light sidenav-close" href="#!"><i class="material-icons left">navigate_before</i>Ocultar</a></li>
     
   </ul>
-  
-  <div id="modalAgregarCategoria" class="modal">
-    <div class="modal-content">
-      <h4>Agregar categoría</h4>
-      <p>Opción para registrar una nueva categoría.</p>
-      <form action="">
-        <div class="row">
-          <div class="input-field col s12 m4">
-            <input placeholder="Categoría" id="nombreCategoria" name="nombreCategoria" type="text" autocomplete="off">
-            <label for="nombreCategoria">Categoría</label>
-          </div>
-          <div class="input-field col s12 m8">
-            <textarea id="descripcionCategoria" name="descripcionCategoria" class="materialize-textarea" placeholder="Descripción" autocomplete="off"></textarea>
-            <label for="descripcionCategoria">Descripción</label>
-          </div>
-        </div>
-      </form>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="btnSalirModalCategoria">Salir</a>
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat" id="btnCrearCategoria">Crear</a>
-    </div>
-  </div> 
 
   <div class="fixed-action-btn">
     <a class="btn-floating btn-large deep-orange accent-3">
       <i class="large material-icons">menu</i>
     </a>
     <ul>
-      <li><a class="btn-floating deep-orange accent-2 modal-trigger tooltipped" data-position="left" 
-        data-tooltip="Registrar categoría" href="#modalAgregarCategoria"><i class="material-icons">edit</i></a></li>  
+      <li><a class="btn-floating deep-orange accent-2 modal-trigger tooltipped btnModal" data-position="left" 
+        data-tooltip="Agregar categoría" href="#modalAgregarCategoria"><i class="material-icons">category</i></a></li>
+      <li><a class="btn-floating deep-orange accent-2 modal-trigger tooltipped btnModal" data-position="left" 
+        data-tooltip="Registrar oferta" href="#modalRegistrarOferta"><i class="material-icons">edit</i></a></li>  
     </ul>
+  </div>
+
+  <div class="boton-menu">
+    <a href="#" data-target="slide-out" class="sidenav-trigger">
+      <i class="material-icons white-text">menu</i>
+    </a>
   </div>
 
   <script src="../js/jquery-3.4.1.min.js"></script>
@@ -223,7 +195,6 @@
   <script src="../js/sweetalert2.all.min.js"></script>
   <script src="../js/inicializaciones.js"></script>
   <script src="../js/direccionamientos.js"></script>
-  <script src="js/validaciones.js"></script>
-  <script src="js/app.categoria.js"></script>
+  <script src="js/app.ofertas.js"></script>
 </body>
-</html>  
+</html>

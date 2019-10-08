@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Modal</title>
+  <link rel="stylesheet" href="../css/fuente/font.css">
+  <link rel="stylesheet" href="../css/material-icons.css">
+  <link rel="stylesheet" href="../css/materialize.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  
+  <a href="#modalLanzar" class="btnModal center-align">modal</a>
+  
+  <div class="contenedor-modal" id="modalLanzar">
+    <div class="contenedor-modal--principal">
+      <div class="contenedor-modal--cuerpo">
+        <div class="row">
+          <div class="row">
+            <h4>Título</h4>
+            <span>Descripción del proceso a realizar en el modal</span>
+          </div>
+        </div>
+      </div>
+      <div class="contenedor-modal--piecero">
+        <a class="btn-flat cerrar-modal" id="salirRegistrarme">Salir</a>
+        <a class="btn-flat" id="btnRegistrarme">Accion</a>
+    </div>
+    </div>
+  </div>
+
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script>
+    /** MODAL **/ 
+    $('.btnModal').on('click', function(){
+      var modal = $(this).attr('href');
+      console.log(modal);
+      
+      $(''+modal).fadeIn();
+    });
+
+    $('.cerrar-modal').on('click', function(){
+      $(this).parent().parent().parent().fadeOut();
+    });
+  </script>
+</body>
+</html>

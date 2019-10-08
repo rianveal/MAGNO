@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/fuente/font.css">
+  <link rel="stylesheet" href="../css/material-icons.css">
+  <link rel="stylesheet" href="../css/materialize.min.css">
+  <link rel="stylesheet" href="../css/jquery.dataTables.min.css"> 
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/usuarios.estilos.css">
+  <title>MAGNO - Usuarios</title>
+</head>
+<body>
+  <!-- Dropdown Structure -->
+  <ul id="dropdown1" class="dropdown-content">
+      <li><a href="#!">Configuración</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">Salir</a></li>
+  </ul>
+  <!-- NAVBAR - HEADER -->
+  <div class="navbar-fixed">
+    <nav class="nav-extended">
+      <div class="nav-wrapper deep-purple darken-1">
+        <a href="#!" class="brand-logo logo-texto" style="margin-left: 10px;">MAGNO</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#" data-target="slide-out" class="sidenav-trigger" style="display: block;"><i class="material-icons">menu</i></a></li>
+          <!-- Dropdown Trigger -->
+          <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Maria Perez<i class="material-icons right">arrow_drop_down</i></a></li>
+        </ul>
+      </div>
+      
+    </nav>
+  </div>
+  
+  <div class="container" style="width: 90%;">
+    <div class="row"></div>
+    <div class="row">
+      <div class="col s12 m12">
+        <h5>Administración de usuarios</h5>
+      </div>
+      <div class="col s12 m12">
+        <table class="responsive-table centered" id="tablaUsuarios">
+          <thead>
+            <tr>
+                <th>Documento</th>
+                <th>Nombre</th>
+                <th>Género</th>
+                <th>Correo electrónico</th>
+                <th>Telefónos</th>
+                <th>Usuario</th>
+                <th></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>1000000000</td>
+              <td>Elit Dorian Mulan</td>
+              <td>Femenino</td>
+              <td>correo@correo.com</td>
+              <td>3112345678</td>
+              <td>elit.mulan</td>
+              <td class="center-align">
+                <a class="transparent lighten-5 tooltipped btnModal" data-position="top" data-tooltip="Administrar" id="Administrar" name="1000000000" href="#modalAdministrarUsuario"><i class="material-icons deep-purple-text">settings</i></a>
+                <a class="transparent lighten-5 tooltipped" data-position="top" data-tooltip="Eliminar" id="eliminar"><i class="material-icons orange-text">delete_forever</i></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="contenedor-modal" id="modalRegistrarUsuario">
+    <div class="contenedor-modal--principal">
+      <div class="contenedor-modal--cuerpo">
+        <div class="row">
+          <div class="row">
+            <h4>Usuarios</h4>
+            <span>Registrar</span>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 m4">
+            <input placeholder="Documento" id="documentoValidar" name="documentoValidar" type="number" autocomplete="off">
+            <label for="documentoValidar">No. de documento</label>
+          </div>
+          <a class="waves-effect waves-light btn deep-purple accent-3" id="btnValidarExistenciaPersona" style="margin-top: 24px;"><i class="material-icons">search</i></a>
+        </div>
+        <div class="row" id="contendorPersona">
+          <div class="input-field col s12 m4">
+            <input placeholder="Documento" id="documento" name="documento" type="number" readonly>
+            <label for="documento">No. de documento</label>
+          </div>
+          <div class="input-field col s12 m4">
+            <input placeholder="Nombre" id="primerNombre" name="primerNombre" type="text" autocomplete="off">
+            <label for="primerNombre">Primer nombre</label>
+          </div>
+          <div class="input-field col s12 m4">
+            <input placeholder="Segundo nombre" id="segundoNombre" name="segundoNombre" type="text" autocomplete="off">
+            <label for="segundoNombre">Segundo nombre</label>
+          </div>
+          <div class="input-field col s12 m4">
+            <input placeholder="Primer apellido" id="primerApellido" name="primerApellido" type="text" autocomplete="off">
+            <label for="primerApellido">Primer apellido</label>
+          </div>
+          <div class="input-field col s12 m4">
+            <input placeholder="Segundo apellido" id="segundoApellido" name="segundoApellido" type="text" autocomplete="off">
+            <label for="segundoApellido">Segundo apellido</label>
+          </div>
+          <div class="input-field col s12 m4">
+            <input placeholder="DD/MM/YYYY" id="fechaNacimieno" name="fechaNacimieno" type="text" autocomplete="off">
+            <label for="fechaNacimieno">Fecha de nacimiento</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <select id="genero" name="genero">
+              <option value="" disabled selected>Seleccionar</option>
+              <option value="F">Femenino</option>
+              <option value="M">Masculino</option>
+            </select>
+            <label>Género</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input placeholder="Correo electrónico" id="correoElectronico" name="correoElectronico" type="text" autocomplete="off">
+            <label for="correoElectronico">Correo electrónico</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input placeholder="Teléfono(s)" id="telefonos" name="telefonos" type="text" autocomplete="off">
+            <label for="telefonos">Teléfono(s)</label>
+          </div>
+          <div class="input-field col s12 m6">
+            <input placeholder="Dirección" id="direccion" name="direccion" type="text" autocomplete="off">
+            <label for="direccion">Dirección</label>
+          </div>
+          <div class="section">
+            <h5>Datos de usuario</h5>
+            <div class="row">
+              <div class="input-field col s12 m6">
+                <input placeholder="Usuario" id="usuario" name="usuario" type="text" autocomplete="off">
+                <label for="usuario">Usuario</label>
+              </div>
+              <div class="input-field col s12 m3">
+                <input placeholder="Contraseña" id="contrasena" name="contrasena" type="password" autocomplete="off">
+                <label for="contrasena">Contraseña</label>
+              </div>
+              <div class="input-field col s12 m3">
+                  <input placeholder="Confirmar contraseña" id="confirmarContrasena" name="confirmarContrasena" type="password" autocomplete="off">
+                  <label for="confirmarContrasena">Confirmar contraseña</label>
+                </div>
+              <div class="input-field col s12 m5">
+                <select id="perfil" name="perfil">
+                  <option value="" disabled selected>Seleccionar</option>
+                  <option value="1">Option 1</option>
+                  <option value="2">Option 2</option>
+                  <option value="3">Option 3</option>
+                </select>
+                <label>Perfil</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contenedor-modal--piecero">
+        <a class="btn-flat cerrar-modal" id="salirRegistrarUsuario">Salir</a>
+        <a class="btn-flat disabled" id="btnRegistrarUsuario">Registrar</a>
+    </div>
+    </div>
+  </div>
+
+  <div class="contenedor-modal" id="modalAdministrarUsuario">
+      <div class="contenedor-modal--principal">
+        <div class="contenedor-modal--cuerpo">
+          <div class="row">
+            <div class="row">
+              <h4>Usuarios</h4>
+              <span>Administrar</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12 m4">
+              <input placeholder="Documento" id="documentoAD" name="documentoAD" type="number" autocomplete="off">
+              <label for="documentoAD">No. de documento</label>
+            </div>
+            <div class="input-field col s12 m4">
+              <input placeholder="Nombre" id="primerNombreAD" name="primerNombreAD" type="text" autocomplete="off">
+              <label for="primerNombreAD">Primer nombre</label>
+            </div>
+            <div class="input-field col s12 m4">
+              <input placeholder="Segundo nombre" id="segundoNombreAD" name="segundoNombreAD" type="text" autocomplete="off">
+              <label for="segundoNombreAD">Segundo nombre</label>
+            </div>
+            <div class="input-field col s12 m4">
+              <input placeholder="Primer apellido" id="primerApellidoAD" name="primerApellidoAD" type="text" autocomplete="off">
+              <label for="primerApellidoAD">Primer apellido</label>
+            </div>
+            <div class="input-field col s12 m4">
+              <input placeholder="Segundo apellido" id="segundoApellidoAD" name="segundoApellidoAD" type="text" autocomplete="off">
+              <label for="segundoApellidoAD">Segundo apellido</label>
+            </div>
+            <div class="input-field col s12 m4">
+              <input placeholder="DD/MM/YYYY" id="fechaNacimienoAD" name="fechaNacimienoAD" type="text" autocomplete="off">
+              <label for="fechaNacimienoAD">Fecha de nacimiento</label>
+            </div>
+            <div class="input-field col s12 m3">
+              <input placeholder="Género actual" id="generoActual" name="generoActual" type="text" readonly>
+              <label for="generoActual">Género actual</label>
+            </div>
+            <div class="input-field col s12 m3">
+              <select id="generoAD" name="generoAD">
+                <option value="" disabled selected>Seleccionar</option>
+                <option value="F">Femenino</option>
+                <option value="M">Masculino</option>
+              </select>
+              <label>Actualizar género</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input placeholder="Correo electrónico" id="correoElectronicoAD" name="correoElectronicoAD" type="text" autocomplete="off">
+              <label for="correoElectronicoAD">Correo electrónico</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input placeholder="Teléfono(s)" id="telefonosAD" name="telefonosAD" type="text" autocomplete="off">
+              <label for="telefonosAD">Teléfono(s)</label>
+            </div>
+            <div class="input-field col s12 m6">
+              <input placeholder="Dirección" id="direccionAD" name="direccionAD" type="text" autocomplete="off">
+              <label for="direccionAD">Dirección</label>
+            </div>
+            <div class="section">
+              <h5>Datos de usuario</h5>
+              <div class="row">
+                <div class="input-field col s12 m6">
+                  <input placeholder="Usuario" id="usuarioAD" name="usuarioAD" type="text" autocomplete="off">
+                  <label for="usuarioAD">Usuario</label>
+                </div>
+                <div class="input-field col s12 m5">
+                  <input placeholder="Contraseña" id="contrasenaAD" name="contrasenaAD" type="password" readonly>
+                  <label for="contrasenaAD">Contraseña</label>
+                </div>
+                <a class="waves-effect waves-light btn deep-purple accent-3" style="margin-top: 24px;"><i class="material-icons">visibility</i></a>
+                <div class="input-field col s12 m4">
+                  <input placeholder="Perfil actual" id="perfilActual" name="perfilActual" type="text" readonly>
+                  <label for="perfilActual">Perfil actual</label>
+                </div>
+                <div class="input-field col s12 m5">
+                  <select>
+                    <option value="" disabled selected>Seleccionar</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                  </select>
+                  <label>Actualizar perfil</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contenedor-modal--piecero">
+          <a class="btn-flat cerrar-modal" id="salirActualizarUsuario">Salir</a>
+          <a class="btn-flat" id="btnActualizarUsuario">Actualizar</a>
+      </div>
+      </div>
+    </div>
+
+  <!-- SIDENAV -->
+  <ul id="slide-out" class="sidenav">
+    <li><div class="user-view">
+      <div class="background">
+        <img src="../img/magno-fondo-01.jpg">
+      </div>
+      <a href="#user"><img class="circle" src="../img/foto-perfil-femenina.png"></a>
+      <a href="#name"><span class="white-text name">Maria Perez</span></a>
+      <a href="#email"><span class="white-text email">Administrador(a)</span></a>
+    </div></li>
+    <li>
+      <ul class="collapsible">
+        <li>
+          <div class="collapsible-header"><i class="material-icons">stars</i>Productos</div>
+          <div class="collapsible-body">
+            <ul style="margin-left: 35px;">
+              <li><a class="waves-effect waves-light" id="admonProductos">Administrar</a></li>
+              <li><a class="waves-effect waves-light" id="productoInformes">Informes</a></li>
+              <li><a class="waves-effect waves-light" id="admonOfertas">Ofertas</a></li>
+              <li><a class="waves-effect waves-light" id="admonFavoritos">Favoritos</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">category</i>Categorias</div>
+          <div class="collapsible-body">
+            <ul style="margin-left: 35px;">
+              <li><a class="waves-effect waves-light" id="admonCategorias">Administrar</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">business</i>Bodegas</div>
+          <div class="collapsible-body">
+            <ul style="margin-left: 35px;">
+              <li><a class="waves-effect waves-light" id="admonBodegas">Administrar</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">local_shipping</i>Proveedores</div>
+          <div class="collapsible-body">
+            <ul style="margin-left: 35px;">
+              <li><a class="waves-effect waves-light" id="admonProveedores">Administrar</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">person</i>Usuarios</div>
+          <div class="collapsible-body">
+            <ul style="margin-left: 35px;">
+              <li><a class="waves-effect waves-light" id="admonUsuarios">Administrar</a></li>
+            </ul>
+          </div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">settings</i>Configuración</div>
+          <div class="collapsible-body">
+            <ul style="margin-left: 35px;">
+              <li><a class="waves-effect waves-light" id="admonPerfiles">Perfiles</a></li>
+              <li><a class="waves-effect waves-light" id="admonEstados">Estados</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">Otras opciones</a></li>
+    <li><a class="waves-effect" href="#!">Opción</a></li>
+    <li><a class="waves-effect waves-light sidenav-close" href="#!"><i class="material-icons left">navigate_before</i>Ocultar</a></li>
+    
+  </ul>
+
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large deep-orange accent-3">
+      <i class="large material-icons">menu</i>
+    </a>
+    <ul>
+      <li><a class="btn-floating deep-orange accent-2 modal-trigger tooltipped btnModal" data-position="left" 
+        data-tooltip="Registrar usuario" href="#modalRegistrarUsuario"><i class="material-icons">edit</i></a></li>  
+    </ul>
+  </div>
+
+  <div class="boton-menu">
+    <a href="#" data-target="slide-out" class="sidenav-trigger">
+      <i class="material-icons white-text">menu</i>
+    </a>
+  </div>
+
+  <!--<a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>-->
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script src="../js/materialize.min.js"></script> 
+  <script src="../js/jquery.dataTables.min.js"></script> 
+  <script src="../js/sweetalert2.all.min.js"></script>
+  <script src="../js/inicializaciones.js"></script>
+  <script src="../js/direccionamientos.js"></script>
+  <script src="js/app.usuarios.js"></script>
+</body>
+</html>
