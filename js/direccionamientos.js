@@ -1,7 +1,7 @@
 var comunicacion = '';
 $(document).ready(function(){
   comunicacion = window.location.origin;
-  rutaGeneral = comunicacion; // comunicacion+'/MAGNO/'
+  rutaGeneral = comunicacion+'/MAGNO/'; // comunicacion+'/MAGNO/'
   
   $('#admonProductos').on('click', function(){
     ruta = rutaGeneral+'/productos/productos.html';
